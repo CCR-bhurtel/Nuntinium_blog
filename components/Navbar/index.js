@@ -13,11 +13,11 @@ function Navbar() {
     useEffect(() => {
         window.addEventListener('click', (e) => {
             const targetEvent = e.target; // parent of click event
-            if (showMenu) {
-                const menu = document.querySelector('.menu');
-                if (!menu.contains(targetEvent)) {
-                    setShowMenu(false);
-                }
+
+            const menu = document.querySelector('.menu');
+
+            if (!menu.contains(targetEvent)) {
+                setShowMenu(false);
             }
         });
     }, []);
@@ -44,40 +44,43 @@ function Navbar() {
                             onClick={menuHandler}
                             className="loginIcon image9 h-10 w-10 rounded-[50%] cursor-pointer hover:border-2 border-gray-500"
                         ></div>
-                        {showMenu && (
-                            <div className="menu flex flex-col gap-3 absolute top-11 z-10 right-0 h-[13rem] w-[9rem] px-5 py-3 rounded-[15px] shadow-gray-500 shadow-md border-[1.5px] bg-white">
-                                <div className="sec1 relative">
-                                    <ul>
-                                        <li>
-                                            <span className="font-bold">Arthur Black</span>
-                                        </li>
-                                        <li>
-                                            <span className="font-extralight text-[13px]">@arthurblack</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="line absolute h-[1px] w-[102%] top-[4rem] left-[-1px] bg-gray-500"></div>
-                                <div className="sec2 text-[15px] leading-6">
-                                    <ul>
-                                        <li>
-                                            <span> Dashboard </span>
-                                        </li>
-                                        <li>
-                                            <span> Write a Post </span>
-                                        </li>
-                                        <li>
-                                            <span> Settings </span>
-                                        </li>
-                                        <li>
-                                            <span> Help </span>
-                                        </li>
-                                        <li>
-                                            <span> Sign out </span>
-                                        </li>
-                                    </ul>
-                                </div>
+
+                        <div
+                            className={` ${
+                                !showMenu ? 'hidden' : 'flex'
+                            } menu flex flex-col gap-3 absolute top-11 z-10 right-0 h-[13rem] w-[9rem] px-5 py-3 rounded-[15px] shadow-gray-500 shadow-md border-[1.5px] bg-white`}
+                        >
+                            <div className="sec1 relative">
+                                <ul>
+                                    <li>
+                                        <span className="font-bold">Arthur Black</span>
+                                    </li>
+                                    <li>
+                                        <span className="font-extralight text-[13px]">@arthurblack</span>
+                                    </li>
+                                </ul>
                             </div>
-                        )}
+                            <div className="line absolute h-[1px] w-[102%] top-[4rem] left-[-1px] bg-gray-500"></div>
+                            <div className="sec2 text-[15px] leading-6">
+                                <ul>
+                                    <li>
+                                        <span> Dashboard </span>
+                                    </li>
+                                    <li>
+                                        <span> Write a Post </span>
+                                    </li>
+                                    <li>
+                                        <span> Settings </span>
+                                    </li>
+                                    <li>
+                                        <span> Help </span>
+                                    </li>
+                                    <li>
+                                        <span> Sign out </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <button className="px-5 border-[1px] border-gray-200 rounded-xl mr-[10px] md:mr-[0px] hidden">
                         Login
