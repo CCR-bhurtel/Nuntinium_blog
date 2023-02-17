@@ -1,6 +1,6 @@
 import React from 'react';
 import NewFeatured from '../Featured/NewFeatured';
-import Blog from './Blog';
+import Blog from './BlogItem';
 
 function BlogList() {
     return (

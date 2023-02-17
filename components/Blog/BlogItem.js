@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Blog() {
+function BlogItem() {
     const randomNum = Math.ceil(Math.random() * 5);
     return (
         <div class="article1 flex flex-col max-w-[100rem] my-[.5rem] items-center md:flex-row md:max-w-[100%] md:justify-center">
@@ -24,4 +24,4 @@ function Blog() {
     );
 }
 
-export default Blog;
+export default BlogItem;
